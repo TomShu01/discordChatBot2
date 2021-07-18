@@ -1,0 +1,17 @@
+{
+  "name": "discordchatbot",
+  "version": "1.0.0",
+  "description": "a discord bot to chat with for the lonely people :)",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tom Scentese DX",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs": "^3.8.0",
+    "@tensorflow/tfjs-node": "^3.8.0",
+    "discord.js": "^12.5.3",
+    "natural": "^5.0.3"
+  }
+}
