@@ -15,4 +15,9 @@ maybe we'll make three modules
 2. speech to text: converts speech in VC to text (using google's speech api)
 3. text to speech: converts the response from chat module to voice (probably using another api)
 
-node modules not included because they are too big, please install them on your own and use them
+commands to take in (we are planning to implement this feature):
+
+1. !talk [string]: talks to chatbot with words and chatbot will respond
+2. !changePersona [string]: chatbot changes its persona to designated personality
+3. !changeTone [string]: chatbot changes its tone to designated tone
+4. !enableVC [bool]: chatbot enables/disables VC based on the bool passed in
