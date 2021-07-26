@@ -8,13 +8,15 @@ const discord = require('discord.js'); // kinda like importing discord library i
 var NeuralNetworkChatBot = require("./NeuralNetworkChatBot");//// import our neural network chat bot
 var getRandomLine = require('./qotd module/qotd.js');// import our random talking function
 var prompt = require("prompt-sync")();// import prompt-sync library for prompting for bot key, there's an extra () because we applied this imported function to instantiate a new prompt instance
+require('dotenv').config();// using environment variable to hold API keys which is the more secure solution
 
 let botToken;
 let randomTalksOn = false; // keeps track of whether random talks is on. i'd hate to use global variables
 // but this is probably the simplest solution for toggling random talking
 
 // prompt for bot key/token
-botToken = prompt('enter your bot token to login:');
+//botToken = prompt('enter your bot token to login:'); // not gonna prompt for bot key for now because i'm storing it in environment variables
+botToken = process.env.botToken;
 
 // setup chatBot
 let chatBot = new NeuralNetworkChatBot();// reads intents from our folder
