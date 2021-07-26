@@ -230,17 +230,22 @@ class NeuralNetworkChatBot {
         // we pass an array because predict actually expects an array of messages
         result = result.arraySync()[0];// convert back to javaScript 2d array, then 1d since we only have one entry
         let result_index = result.indexOf(Math.max(...result));// Return index of greatest value in an array
-        let result_tag = this.labels[result_index];
-        console.log(result_tag);
+        if (result[result_index] > 0.7) {// goes with the response only if the bot is 0.7 confident about the best probable answer
+            let result_tag = this.labels[result_index];
+            console.log(result_tag);
 
-        let responses = [];
-        for (let tag in this.data['intents']) {
-            if (this.data['intents'][tag]['tag'] == result_tag) {
-                responses = this.data['intents'][tag]['responses'];
+            let responses = [];
+            for (let tag in this.data['intents']) {
+                if (this.data['intents'][tag]['tag'] == result_tag) {
+                    responses = this.data['intents'][tag]['responses'];
+                }
             }
+            let random_index = Math.floor(Math.random() * responses.length);// pick a random response
+            return responses[random_index];
+        } else {
+            console.log("don't understand message");
+            return "what are you talking about?";
         }
-        let random_index = Math.floor(Math.random() * responses.length);// pick a random response
-        return responses[random_index];
     }
 }
 

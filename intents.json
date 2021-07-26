@@ -5,13 +5,13 @@
          "context_set": ""
         },
         {"tag": "goodbye",
-         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day"],
+         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day", "bye"],
          "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!", "sayonara"],
          "context_set": ""
         },
         {"tag": "age",
-         "patterns": ["how old", "how old is tim", "what is your age", "how old are you", "age?"],
-         "responses": ["I am 2000 years old!", "2000 years young!", "older than you bro"],
+         "patterns": ["how old", "what is your age", "how old are you", "age?"],
+         "responses": ["I am 2000 years old!", "2000 years old!", "older than you bro"],
          "context_set": ""
         },
         {"tag": "name",
@@ -20,12 +20,27 @@
          "context_set": ""
         },
         {"tag": "games",
-         "patterns": ["how do you like league of legends", "do you like r6", "whats your favourite game", "do you like games"],
-         "responses": ["games suck", "stop playing games and study", "i kinda like games tho"],
+         "patterns": ["lol, r6, apex, witcher, csgo", "do you like r6", "whats your favourite game", "do you like games"],
+         "responses": ["I know that i don't like apex", "did you know that mgs remastered is coming out?", "league games are so sweaty"],
          "context_set": ""
         },
+        {"tag": "rank",
+         "patterns": ["dude i just deranked", "i'm stuck in copper", "this game is cancer", "i'm bronze now", "i'm gold", "i'm g2"],
+         "responses": ["you just suck bro", "just git gud", "lmao"],
+         "context_set": ""
+        },
+        {"tag": "game packs",
+        "patterns": ["i just got a legendary", "what, this is epic?", "jealous of your black ice", "this game hates me", "opening packs rn", "got an alpha pack"],
+        "responses": ["i just got two black ices yesterday", "that skin sucks", "looks so generic"],
+        "context_set": ""
+        },
+        {"tag": "teammates",
+        "patterns": ["my teammates are so bad", "can i get a stack?", "anyone wanna play", "i need to 5 stack", "i solo q'd ranked", "solo queue"],
+        "responses": ["don't solo q if you remotely care about your rank", "pepegas everywhere nowadays", "those teammates really suck lmao"],
+        "context_set": ""
+        },
         {"tag": "story",
-         "patterns": ["what did you do", "tell me about you", "what about you"],
+         "patterns": ["what did you do", "tell me about you", "what about you", "what's your story"],
          "responses": ["i used to be nothing, now i'm a computer", "i was coded in less than 48 hours", "my creators rushed me out"],
          "context_set": ""
         }
