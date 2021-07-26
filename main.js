@@ -46,16 +46,18 @@ function runDiscordBot() {
 
     // response to command
     client.on('message', message => {
-        if (message.author.bot) {
+        if ((!message.content.includes("bot")) || message.author.bot) {
             return;
-        }// bot doesn't react to commands
-        //message.channel.send('hey!');
+        } // bot won't do anything if the message doesn't contain "bot" or is sent by a bot
+        // could've used a discord mention as cue for bot to talk, but then decided that
+        // it's too clunky to use, on the other word, just typing bot in your message
+        // is a way nicer solution
 
-        if (message.content === 'start talking') {
+        if (message.content === 'start talking bot') {
             randomTalksOn = true;
             randTalks(message.channel); // bot talks randomly every 3 seconds
             return;
-        } else if (message.content === 'shut up') {
+        } else if (message.content === 'shut up bot') {
             randomTalksOn = false;
             return;
         }// toggle random talking
