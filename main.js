@@ -6,12 +6,34 @@ const discord = require('discord.js'); // kinda like importing discord library i
 // learn about tensorflow/neural network: https://www.youtube.com/watch?v=XdErOpUzupY
 
 var NeuralNetworkChatBot = require("./NeuralNetworkChatBot");//// import our neural network chat bot
+var getRandomLine = require('./qotd module/qotd.js');// import our random talking function
 
 // setup chatBot
 let chatBot = new NeuralNetworkChatBot();// reads intents from our folder
 chatBot.setupData(require('./intents.json'));// setup all data for our neural network model, intents is extracted from a json file
 chatBot.setupModel();
 chatBot.furtherSetupModel('file://./TFModel').then(runDiscordBot);// now we will build our model/neural network
+
+let randomTalksOn = false; // keeps track of whether random talks is on. i'd hate to use global variables
+// but this is probably the simplest solution for toggling random talking
+
+// bot talks randomly once in a while
+async function randTalks(channel) {
+    channel.send("sure, bro. let's talk");
+    while (true) {
+        if (!randomTalksOn) {
+            channel.send("alright, lmao");
+            break;
+        }
+
+        await new Promise((resolve, reject) => {
+            setTimeout(function () {
+                channel.send(getRandomLine());
+                console.log("talking randomly");
+                resolve('foo'); }, 1000 * 10)
+        });
+    }
+}
 
 function runDiscordBot() {
     const client = new discord.Client(); //creates our discord bot
@@ -28,6 +50,15 @@ function runDiscordBot() {
             return;
         }// bot doesn't react to commands
         //message.channel.send('hey!');
+
+        if (message.content === 'start talking') {
+            randomTalksOn = true;
+            randTalks(message.channel); // bot talks randomly every 3 seconds
+            return;
+        } else if (message.content === 'shut up') {
+            randomTalksOn = false;
+            return;
+        }// toggle random talking
 
         message.channel.send(chatBot.chat(message.content));
     });

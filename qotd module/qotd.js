@@ -1,12 +1,9 @@
-const Discord = require("discord.js")
-const { Client, MessageAttachment } = require('discord.js');
-
 const fs = require('fs');
-const client = new Discord.Client()
 
-
+// this module provides the getRandomLine function for the bot to talk randomly
 var data;
-fs.readFile('qotd.txt', 'utf8', function (err, rawData) {
+
+fs.readFile('./qotd module/qotd.txt', 'utf8', function (err, rawData) {
   if (err) {
     return console.log(err);
   }
@@ -21,17 +18,4 @@ function getRandomLine(){
   return data[randomInt(0,data.length)];
 }
 
-
-
-client.once('ready', () => {
-    console.log('chat bot is online!');
-});
-
-client.on("message", message => {
-  if (message.content === "!talk qotd") {
-    message.channel.send(getRandomLine());
-  }
-});
-
-client.login('your bot key');
-
+module.exports = getRandomLine;// only exports the getRandomLine function
