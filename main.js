@@ -16,7 +16,7 @@ let randomTalksOn = false; // keeps track of whether random talks is on. i'd hat
 
 // prompt for bot key/token
 //botToken = prompt('enter your bot token to login:'); // not gonna prompt for bot key for now because i'm storing it in environment variables
-botToken = process.env.botToken;
+botToken = process.env.BOT_TOKEN;
 
 // setup chatBot
 let chatBot = new NeuralNetworkChatBot();// reads intents from our folder
