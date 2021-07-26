@@ -7,15 +7,20 @@ const discord = require('discord.js'); // kinda like importing discord library i
 
 var NeuralNetworkChatBot = require("./NeuralNetworkChatBot");//// import our neural network chat bot
 var getRandomLine = require('./qotd module/qotd.js');// import our random talking function
+var prompt = require("prompt-sync")();// import prompt-sync library for prompting for bot key, there's an extra () because we applied this imported function to instantiate a new prompt instance
+
+let botToken;
+let randomTalksOn = false; // keeps track of whether random talks is on. i'd hate to use global variables
+// but this is probably the simplest solution for toggling random talking
+
+// prompt for bot key/token
+botToken = prompt('enter your bot token to login:');
 
 // setup chatBot
 let chatBot = new NeuralNetworkChatBot();// reads intents from our folder
 chatBot.setupData(require('./intents.json'));// setup all data for our neural network model, intents is extracted from a json file
 chatBot.setupModel();
-chatBot.furtherSetupModel('file://./TFModel').then(runDiscordBot);// now we will build our model/neural network
-
-let randomTalksOn = false; // keeps track of whether random talks is on. i'd hate to use global variables
-// but this is probably the simplest solution for toggling random talking
+chatBot.furtherSetupModel('file://./TFModel').then(runDiscordBot(botToken));// now we will build our model/neural network
 
 // bot talks randomly once in a while
 async function randTalks(channel) {
@@ -35,7 +40,7 @@ async function randTalks(channel) {
     }
 }
 
-function runDiscordBot() {
+function runDiscordBot(botToken) {
     const client = new discord.Client(); //creates our discord bot
 
     const prefix = '!'; //command prefix is "!". e.x. !talk
@@ -85,7 +90,7 @@ function runDiscordBot() {
         }
     });*/
 
-    client.login('enter your bot key');// login to our bot, keep this line at the end of file!!!
+    client.login(botToken);// login to our bot, keep this line at the end of file!!!
     // if you want to run this code, you won't be using our application token and thus wouldn't be the same bot as ours
     // but it will have the same functionality, you cna use our bot by inviting it to your server using the link below, however
     // whether it goes online depends on whether our dev team decides to run it on our own computers
