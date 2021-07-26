@@ -11,6 +11,9 @@ but it will have the same functionality, you cna use our bot by inviting it to y
 whether it goes online depends on whether our dev team decides to run it on our own computers
 don't send this token to anybody, replace with something else before you share with anyone
 
+notes: for some reason, the bot is making some very inaccurate, high confidence predictions for some inputs.
+It also sometimes get stuck in predicting and i have to ctrl C to exit it, i don't know why
+
 list of all features planned:
 1. chat module: takes in a message and spits out a response
 2. speech to text: converts speech in VC to text (using google's speech api)
