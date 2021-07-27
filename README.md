@@ -15,6 +15,7 @@ notes: for some reason, the bot is making some very inaccurate, high confidence 
 It also sometimes get stuck in predicting and i have to ctrl C to exit it, i don't know why
 
 notes: the bot is now hosted on heroku 24/7 through github
+you can invite this bot to server through this link: https://discord.com/oauth2/authorize?client_id=865792256023199745&scope=bot&permissions=7754743361
 
 list of all features planned:
 1. chat module: takes in a message and spits out a response
