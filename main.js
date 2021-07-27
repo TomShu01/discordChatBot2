@@ -4,6 +4,8 @@ const discord = require('discord.js'); // kinda like importing discord library i
 // built by following this tutorial: https://www.youtube.com/watch?v=wypVcNIH6D4
 // learn about natural language processing: https://blog.logrocket.com/natural-language-processing-for-node-js/
 // learn about tensorflow/neural network: https://www.youtube.com/watch?v=XdErOpUzupY
+// learn about hosting bots on heroku: https://www.youtube.com/watch?v=VZUulBMKfoY
+// learn about environment variables: https://www.youtube.com/watch?v=17UVejOw3zA, https://itnext.io/how-to-use-environment-variables-in-node-js-cb2ef0e9574a
 
 var NeuralNetworkChatBot = require("./NeuralNetworkChatBot");//// import our neural network chat bot
 var getRandomLine = require('./qotd module/qotd.js');// import our random talking function
