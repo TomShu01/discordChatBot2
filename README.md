@@ -14,7 +14,7 @@ don't send this token to anybody, replace with something else before you share w
 notes: for some reason, the bot is making some very inaccurate, high confidence predictions for some inputs.
 It also sometimes get stuck in predicting and i have to ctrl C to exit it, i don't know why
 
-notes: the bot is now hosted on heroku 24/7
+notes: the bot is now hosted on heroku 24/7 through github
 
 list of all features planned:
 1. chat module: takes in a message and spits out a response
