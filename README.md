@@ -17,10 +17,14 @@ There are two types of messages that discordChatBot responds to:
 Planned/implemented commands:
 
 1. [x] start talking bot: enables random talking
+![start talking bot](docs/discordChatBot_start_talking.gif)
 2. [x] shut up bot: disables random talking
-3. [ ] !changePersona [string]: chatbot changes its persona to designated personality
-4. [ ] !changeTone [string]: chatbot changes its tone to designated tone
-5. [ ] !enableVC [bool]: chatbot enables/disables VC based on the bool passed in
+![shut up bot](docs/discordChatBot_shut_up.gif)
+3. [x] respond only when message contains "bot"
+![bot mentioned](docs/discordChatBot_bot_mentioned.gif)
+4. [ ] !changePersona [string]: chatbot changes its persona to designated personality
+5. [ ] !changeTone [string]: chatbot changes its tone to designated tone
+6. [ ] !enableVC [bool]: chatbot enables/disables VC based on the bool passed in
 
 Conversation topic examples:
 * **User**: "hey chatbot" **Chatbot**: "what's up!"
@@ -28,6 +32,10 @@ Conversation topic examples:
 * **User**: "i am lonely" **Chatbot**: "hey, i'm here bro"
 * **User**: "i'm kinda sad" **Chatbot**: "you are not"
 * **User**: "bro what you be doing bro?" **Chatbot**: "I'll chat with you?"
+
+![example1](docs/discordChatBot_example1.gif)
+
+![example2](docs/discordChatBot_example2.gif)
 
 In addition to responding to messages, discordChatBot can also start conversations on its own by sending messages once in a while. This feature is enabled/disabled using the **start talking bot** and **shut up bot** command mentioned above
 
