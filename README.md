@@ -8,7 +8,7 @@ A computer user on a [Discord](https://en.wikipedia.org/wiki/Discord_(software))
 ## What it does
 First, dicordChatBot must be invited to the designated Discord server (which is Discord's terminology for a chat group)
 
-Then, any message you send to the Discord server will be read and interpreted by discordChatBot. And discordChatBot will respond to the messages that it's programmed to respond to.
+Then, any message you send to the Discord server will be read and interpreted by discordChatBot. And discordChatBot will respond to the messages that it's programmed to respond to. When discordChatBot does not understand a message, it will reply: "What are you talking about?"
 
 There are two types of messages that discordChatBot responds to:
 * **commands**: command the bot to perform a certain task
